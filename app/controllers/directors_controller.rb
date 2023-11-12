@@ -6,13 +6,13 @@ class DirectorsController < ApplicationController
     the_director = matching_records.at(0)
 
     the_director.name = params.fetch("the_name")
-    the_director.year = params.fetch("the_dob")
-    the_director.duration = params.fetch("the_bio")
+    the_director.dob = params.fetch("the_dob")
+    the_director.bio = params.fetch("the_bio")
     the_director.image = params.fetch("the_image")
   
     the_director.save
 
-    redirect_to("/director/#{the_director.id}")
+    redirect_to("/directors/#{the_director.id}")
   end
 
   def create
